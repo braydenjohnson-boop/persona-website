@@ -672,6 +672,8 @@ footer.site .legal { border-top: 1px solid var(--line); margin-top: 28px; paddin
 </footer>
 <script>
 (function () {
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  if (!location.hash) { window.scrollTo(0, 0); }
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var bg = document.querySelector('.hero-bg');
   if (bg && reduce) { bg.src = 'eller_poster.jpg'; }
