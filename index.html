@@ -63,7 +63,7 @@ header.top {
   background: var(--surface);
   border-bottom: 1px solid var(--line);
 }
-header.top .wrap { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; padding-block: 12px; }
+header.top .wrap { max-width: none; display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; padding-block: 12px; }
 header.top .logo { font-family: "Montserrat", sans-serif; font-weight: 800; letter-spacing: 0.04em; color: var(--navy); text-decoration: none; }
 header.top nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; font-size: 1.02rem; }
 header.top nav a { text-decoration: none; color: var(--muted); }
@@ -212,7 +212,10 @@ header.top .logo { display: inline-flex; align-items: center; gap: 12px; }
 .logo-name { font-family: "Montserrat", sans-serif; font-weight: 700; letter-spacing: 0.04em; color: var(--navy); text-transform: uppercase; font-size: 0.98rem; }
 
 /* Sporty BJ mark */
-.bj-logo { width: 96px; height: auto; display: block; overflow: visible; }
+.bj-logo { width: 124px; height: auto; display: block; overflow: visible; transition: transform 0.25s ease; }
+header.top .logo { margin-left: 4px; }
+header.top .logo:hover .bj-logo, header.top .logo:focus-visible .bj-logo { transform: translateX(4px) rotate(-2deg); }
+@media (prefers-reduced-motion: reduce) { .bj-logo { transition: none; } }
 .bj-logo text { font-family: "Montserrat", sans-serif; font-weight: 900; font-style: italic; font-size: 46px; letter-spacing: -0.02em; }
 
 /* Closing CTA */
@@ -232,7 +235,7 @@ footer.site .legal { border-top: 1px solid var(--line); margin-top: 28px; paddin
 <div class="progress" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Brayden Johnson, back to top"><svg class="bj-logo" viewBox="0 0 120 64" aria-hidden="true"><path d="M6 58 Q60 50 116 34" fill="none" style="stroke:var(--teal)" stroke-width="5" stroke-linecap="round"/><g transform="translate(9 3) skewX(-12)"><text x="60" y="46" text-anchor="middle" style="fill:var(--teal)">BJ</text></g><g transform="translate(6 0) skewX(-12)"><text x="60" y="46" text-anchor="middle" style="fill:var(--navy)">BJ</text></g></svg></a>
+    <a class="logo" href="#top" aria-label="Brayden Johnson, back to top"><svg class="bj-logo" viewBox="0 0 120 64" aria-hidden="true"><path d="M4 52 Q58 44 120 18" fill="none" style="stroke:var(--teal)" stroke-width="6" stroke-linecap="round"/><g transform="translate(9 3) skewX(-12)"><text x="60" y="46" text-anchor="middle" style="fill:var(--teal)">BJ</text></g><g transform="translate(6 0) skewX(-12)"><text x="60" y="46" text-anchor="middle" style="fill:var(--navy)">BJ</text></g></svg></a>
     <nav aria-label="Sections">
       <a href="#about">About</a>
       <a href="#resume">Resume</a>
